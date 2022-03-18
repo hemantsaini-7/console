@@ -86,8 +86,9 @@ export const pipelineBuilderPage = {
         detailsPage.titleShouldContain(pageTitle.Pipelines);
         cy.get('body').then(($body) => {
           if ($body.find('[data-test-id= "dropdown-button"]').length > 0) {
-            cy.byLegacyTestID('dropdown-button').click();
-            cy.get(pipelineBuilderPO.pipeline).click();
+            cy.get(pipelinesPO.createPipeline).click();
+            // cy.byLegacyTestID('dropdown-button').click();
+            // cy.get(pipelineBuilderPO.pipeline).click();
           } else {
             cy.get(pipelinesPO.createPipeline).click();
           }
