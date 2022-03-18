@@ -541,7 +541,7 @@ When('user should see the Create button enabled after installation', () => {
 });
 
 When('user selects {string} from Add task quick search', (searchItem: string) => {
-  pipelineBuilderPage.clickAddTask();
+  cy.get('[data-test="task-list"]').click();
   cy.get(pipelineBuilderPO.formView.quickSearch).type(searchItem);
   cy.byTestID('task-cta').click();
 });

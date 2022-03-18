@@ -235,14 +235,13 @@ Feature: Create the pipeline from builder page
               And user searches "openshift-client" in quick search bar
               And user clicks on Add in "openshift-client" task
               And user clicks on Add finally task
-              And user clicks Add task button under Tasks section
-              And user searches "tkn" in quick search bar
-              And user clicks on Add in "tkn" task
-              # And user clicks on Add finally task again
-              # And user selects "kn" from Add task quick search
+              And user selects "tkn" from Add task quick search
+              And user clicks on Add finally task again
+              And user selects "kn" from Add task quick search
               And user clicks on Create
              Then user will be redirected to Pipeline Details page with header name "pipeline-finally"
               And user is able to see finally tasks "tkn" and "kn" mentioned under "Finally tasks" section in the Pipeline details page
+
 
 
         @regression
