@@ -110,6 +110,7 @@ export const pipelineBuilderPage = {
     });
   },
   selectTask: (taskName: string = 'kn', tries: number = 4, polling: number = 500) => {
+    // cy.wait(10000);
     pipelineBuilderPage.clickAddTask(tries, polling);
     pipelineBuilderPage.AddTask(taskName);
   },
@@ -208,8 +209,8 @@ export const pipelineBuilderPage = {
     pipelineBuilderPage.enterPipelineName(pipelineName);
     pipelineBuilderPage.selectTask(taskName);
     pipelineBuilderPage.addResource(resourceName);
-    pipelineBuilderPage.clickOnTask(taskName);
-    pipelineBuilderSidePane.selectInputResource(resourceName);
+    // pipelineBuilderPage.clickOnTask(taskName);
+    // pipelineBuilderSidePane.selectInputResource(resourceName);
     pipelineBuilderPage.clickCreateButton();
     pipelineDetailsPage.verifyTitle(pipelineName);
   },

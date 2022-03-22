@@ -119,16 +119,16 @@ Feature: Perform the actions on Pipelines page
 
         @regression
         Scenario: Delete the Pipeline from pipelines page: P-06-TC10
-            Given pipeline "p-run-one" is present on Pipelines page
-             When user selects "Delete Pipeline" from the kebab menu for "p-run-one"
+            Given pipeline "pipe-run-one" is present on Pipelines page
+             When user selects "Delete Pipeline" from the kebab menu for "pipe-run-one"
               And user clicks Delete button on Delete Pipeline modal
              Then user will be redirected to Pipelines page
 
 
         @regression
         Scenario: Edit the Pipeline from pipelines page: P-06-TC11
-            Given pipeline "p-run-two" is present on Pipelines page
-             When user selects "Edit Pipeline" from the kebab menu for "p-run-two"
+            Given pipeline "pipe-run-two" is present on Pipelines page
+             When user selects "Edit Pipeline" from the kebab menu for "pipe-run-two"
              Then user is at the Pipeline Builder page
               And Name field will be disabled
               And Add Parameters, Add Resources, Task should be displayed
