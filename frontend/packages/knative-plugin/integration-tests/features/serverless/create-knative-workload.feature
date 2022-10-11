@@ -14,15 +14,15 @@ Feature: Create a workload of 'knative Service' type resource
               And Knative Service option is displayed under Resources section
 
 
-        @regression @to-do
+        @regression
         Scenario: knative resource type in docker file add flow: KN-05-TC02
             Given user is at Add page
-             When user clicks on Import from Git
+             When user clicks on Import From Git option
               And user enters git url "https://github.com/rohitkrai03/flask-dockerfile-example"
              Then Knative Service option is displayed under Resources section
 
 
-        @regression @broken-test
+        @regression
         Scenario: knative resource type in catalog add flow: KN-05-TC03
             Given user is at Add page
              When user clicks on From Catalog card
@@ -61,7 +61,7 @@ Feature: Create a workload of 'knative Service' type resource
                   | openshift/hello-openshift | knative-ex-registry |
 
 
-        @regression @to-do
+        @regression
         Scenario Outline: Create a workload from Docker file card on Add page: KN-05-TC06
             Given user is on Import from Git form
              When user enters Docker URL as "<docker_git_url>"
@@ -79,7 +79,7 @@ Feature: Create a workload of 'knative Service' type resource
                   | https://github.com/rohitkrai03/flask-dockerfile-example | Dockerfile      | knative-docker |
 
 
-        @regression @broken-test
+        @regression
         Scenario: Create a workload from DevCatalog BuilderImages card on Add page: KN-05-TC07
             Given user is at Developer Catalog page
               And builder images are displayed
@@ -93,7 +93,7 @@ Feature: Create a workload of 'knative Service' type resource
               And user is able to see workload "nodejs-ex-git" in topology page
 
 
-        @regression @to-do
+        @regression
         Scenario: Create a knative workload with advanced option "Scaling" from From Git card: KN-05-TC08
             Given user is at Import from Git form
              When user enters Git Repo URL as "https://github.com/sclorg/dancer-ex.git"

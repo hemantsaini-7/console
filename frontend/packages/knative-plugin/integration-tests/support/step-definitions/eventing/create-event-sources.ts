@@ -1,5 +1,4 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
-import { detailsPage } from '@console/cypress-integration-tests/views/details-page';
 import {
   devNavigationMenu,
   addOptions,
@@ -101,7 +100,7 @@ When('user enters Name as {string} in General section', (name: string) => {
 });
 
 Then('user will be redirected to page with header name {string}', (title: string) => {
-  detailsPage.titleShouldContain(title);
+  cy.byLegacyTestID('resource-title').should('include.text', title);
 });
 
 Then(

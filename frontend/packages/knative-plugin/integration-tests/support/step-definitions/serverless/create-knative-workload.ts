@@ -7,7 +7,7 @@ import {
   devNavigationMenu,
   gitAdvancedOptions,
 } from '@console/dev-console/integration-tests/support/constants';
-import { gitPO } from '@console/dev-console/integration-tests/support/pageObjects';
+import { gitPO, topologyPO } from '@console/dev-console/integration-tests/support/pageObjects';
 import {
   addPage,
   gitPage,
@@ -95,4 +95,16 @@ When('user enters Image name from external registry as {string}', (imageName: st
 
 Given('user is at Deploy Image page', () => {
   addPage.selectCardFromOptions(addOptions.ContainerImage);
+});
+
+When('user enters git url {string}', (url: string) => {
+  gitPage.enterGitUrl(url);
+});
+
+When('user enters Docker URL as {string}', (url: string) => {
+  gitPage.enterGitUrl(url);
+});
+
+When('user clicks on Import From Git option', () => {
+  cy.get(topologyPO.grouping.importFromGitOption).click();
 });
