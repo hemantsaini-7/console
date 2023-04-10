@@ -228,9 +228,28 @@ export const verifyAndInstallOperator = (operator: operators, namespace?: string
   performPostInstallationSteps(operator);
 };
 
+export const verifyAndInstallPipelinesOperatorUsingCLI = () => {
+  const yamlFile = 'testData/pipelinesOperatorInstallationUsingCLI.yaml';
+  cy.exec(`oc apply -f ${yamlFile}`, {
+    failOnNonZeroExit: false,
+  }).then(function(result) {
+    cy.log(result.stdout);
+  });
+
+  waitForCRDs(operators.PipelinesOperator);
+  cy.visit('/pipelines/ns/default');
+  pipelinesPage.clickOnCreatePipeline();
+  waitForPipelineTasks();
+};
+
 export const verifyAndInstallPipelinesOperator = () => {
   perspective.switchTo(switchPerspective.Administrator);
   verifyAndInstallOperator(operators.PipelinesOperator);
+};
+
+export const installPipelinesOperatorUsingCLI = () => {
+  perspective.switchTo(switchPerspective.Administrator);
+  verifyAndInstallPipelinesOperatorUsingCLI();
 };
 
 export const verifyAndInstallKnativeOperator = () => {
